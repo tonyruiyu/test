@@ -1,0 +1,161 @@
+{
+  "message": [
+    {
+      "id": "M_1000",
+      "url": "menu.html",
+      "menuName": "首页",
+      "icon": "fa fa-home",
+      "children": []
+    },
+    {
+      "id": "M_2000",
+      "url": "#",
+      "menuName": "权限管理",
+      "icon": "fa fa-user",
+      "children": [
+        {
+          "id": "M_2010",
+          "url": "module/base/user.html",
+          "menuName": "用户管理",
+          "icon": "fa fa-user",
+          "children": []
+        },
+        {
+          "id": "M_2020",
+          "url": "module/base/role.html",
+          "menuName": "角色管理",
+          "icon": "fa fa-users",
+          "children": []
+        },
+        {
+          "id": "M_2030",
+          "url": "module/base/roleUser.html",
+          "menuName": "角色用户管理",
+          "icon": "fa fa-users",
+          "children": []
+        },
+        {
+          "id": "M_2050",
+          "url": "module/base/menuButton.html",
+          "menuName": "菜单按钮",
+          "icon": "fa fa-cog",
+          "children": []
+        },
+        {
+          "id": "M_2060",
+          "url": "module/base/roleMenuButton.html",
+          "menuName": "角色菜单按钮分配",
+          "icon": "fa fa-cog",
+          "children": []
+        },
+        {
+          "id": "M_2070",
+          "url": "module/base/userRoleDataPermission.html",
+          "menuName": "用户角色数据权限分配",
+          "icon": "fa fa-cog",
+          "children": []
+        },
+        {
+          "id": "M_2080",
+          "url": "module/base/userRoleBrandPermission.html",
+          "menuName": "用户角色品牌权限分配",
+          "icon": "fa fa-cog",
+          "children": []
+        },
+        {
+          "id": "M_2090",
+          "url": "module/base/userRoleOrg.html",
+          "text": "用户角色组织权限分配",
+          "icon": "fa fa-cog",
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "M_3000",
+      "url": "#",
+      "menuName": "示例代码",
+      "icon": "fa fa-bolt",
+      "children": [
+        {
+          "id": "M_3010",
+          "url": "module/examples/tableDD/selectTable.html",
+          "menuName": "SelectTable_eg",
+          "icon": "fa fa-group",
+          "children": []
+        },
+        {
+          "id": "M_3020",
+          "url": "module/examples/portal/portal.html",
+          "menuName": "门户",
+          "icon": "fa fa-cog",
+          "children": []
+        },
+        {
+          "id": "M_3030",
+          "url": "module/examples/datepicker.html",
+          "menuName": "datepicker",
+          "icon": "fa fa-file",
+          "children": []
+        },
+        {
+          "id": "M_3040",
+          "url": "module/examples/chosenMultipleSelect.html",
+          "menuName": "chosenMS",
+          "icon": "fa fa-bullhorn",
+          "children": []
+        },
+        {
+          "id": "M_3050",
+          "url": "module/examples/select2.html",
+          "menuName": "select2",
+          "icon": "fa fa-bullhorn",
+          "children": []
+        },
+        {
+          "id": "M_3060",
+          "url": "module/examples/tables/table.html",
+          "menuName": "数据列表",
+          "icon": "fa fa-list",
+          "children": []
+        },
+        {
+          "id": "M_3070",
+          "url": "module/examples/tables/table_1.html",
+          "menuName": "数据列表-1",
+          "icon": "fa fa-list",
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "M_4000",
+      "url": "#",
+      "menuName": "mba-成本核算",
+      "icon": "fa fa-bolt",
+      "children": [
+        {
+          "id": "M_4010",
+          "url": "module/mba/selectTable.html",
+          "menuName": "单位成本核算设置",
+          "icon": "fa fa-group",
+          "children": []
+        },
+        {
+          "id": "M_4020",
+          "url": "module/mba/portal.html",
+          "menuName": "成本结转设置",
+          "icon": "fa fa-cog",
+          "children": []
+        },
+        {
+          "id": "M_4030",
+          "url": "module/mba/datepicker.html",
+          "menuName": "单位成本录入",
+          "icon": "fa fa-file",
+          "children": []
+        }
+      ]
+    }
+  ]
+}

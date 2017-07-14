@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="shortcut icon" href="app/images/favicon.ico"
+	type="image/x-icon" />
+<title>统一平台</title>
+<!-- Bootstrap -->
+<link href="resource/css/bootstrap.css" rel="stylesheet">
+<link href="resource/css/select2.min.css" rel="stylesheet" />
+<link href="resource/css/bootstrap-datepicker.min.css" rel="stylesheet" />
+<link href="resource/css/bootstrap-timepicker.min.css" rel="stylesheet" />
+<link href="resource/css/bootstrap-datetimepicker.min.css"
+	rel="stylesheet" />
+<link href="resource/css/font-awesome.css" rel="stylesheet">
+<link href="resource/css/jquery.gritter.css" rel="stylesheet" />
+<link href="resource/css/jquery.mmenu.all.css" rel="stylesheet">
+<link href="resource/css/chosen.css" rel="stylesheet" />
+<link href="resource/css/tab-control.min.css" rel="stylesheet">
+<link href="resource/css/jquery.jgrowl.min.css" rel="stylesheet">
+<link href="resource/css/tabdrop.css" rel="stylesheet">
+<link href="resource/css/bootstrap-duallistbox.min.css" rel="stylesheet" />
+<link href="resource/css/ztree/css/zTreeStyle/zTreeStyle.css"
+	rel="stylesheet">
+<link href="resource/css/ztree/css/zTree.css" rel="stylesheet">
+<link href="app/css/mini-w.css" rel="stylesheet">
+<link href="app/css/content.css" rel="stylesheet">
+<link href="app/css/minimal.css" rel="stylesheet">
+<link href="resource/css/ui.jqgrid.css" rel="stylesheet" />
+<link href="app/css/ace.jqgrid.css" rel="stylesheet" />
+<!-- <link href="app/css/progress.css" rel="stylesheet"> -->
+<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+	<script src="resource/html5/html5shiv.min.js"></script>
+	<script src="resource/html5/respond.min.js"></script>
+	<![endif] -->
+<style type="text/css">
+.dropdown-menu {
+	z-index: 5000;
+}
+</style>
+</head>
+<body class="solid-bg-0" style="position: relative;">
+	<!-- Preloader -->
+	<div class="mask">
+		<div id="loader"></div>
+	</div>
+	<!--/Preloader -->
+	<!-- Wrap all page content here -->
+	<div id="wrap">
+		<!-- Make page fluid -->
+		<div class="row">
+
+			<!-- Fixed navbar -->
+			<div
+				class="navbar navbar-default navbar-fixed-top navbar-transparent-black mm-fixed-top"
+				role="navigation" id="navbar">
+
+				<!-- Branding -->
+				<div class="navbar-header col-md-2">
+					<a class="navbar-brand" href="index.html"
+						style="font-family: '微软雅黑'"> <strong>MIN</strong>IMAL
+					</a>
+
+					<div class="sidebar-collapse">
+						<a href="#"> <i class="fa fa-bars"></i>
+						</a>
+					</div>
+				</div>
+				<!-- Branding end -->
+				<!-- .nav-collapse -->
+				<div class="navbar-collapse">
+
+					<!-- Page refresh -->
+					<ul class="nav navbar-nav refresh">
+						<li class="divided"><a href="#" class="page-refresh"><i
+								class="fa fa-refresh"></i></a></li>
+					</ul>
+					<!-- /Page refresh -->
+
+					<!-- Search -->
+					<!--<div class="search" id="main-search">
+                <i class="fa fa-search"></i> <input type="text" placeholder="Search...">
+            </div>-->
+					<!-- Search end -->
+
+					<!-- Quick Actions -->
+					<ul class="nav navbar-nav quick-actions">
+
+						<li class="dropdown divided user" id="current-user">
+							<div class="profile-photo">
+								<img src="app/images/profile-photo.jpg" alt />
+							</div> <a class="dropdown-toggle options" data-toggle="dropdown"
+							href="#">   <i class="fa fa-caret-down"></i>
+						</a>
+
+							<ul class="dropdown-menu arrow settings">
+								<li>
+									<h3>背景色:</h3>
+									<ul id="color-schemes">
+										<li><a href="#" class="solid-bg-0"></a></li>
+										<li><a href="#" class="solid-bg-1"></a></li>
+										<li><a href="#" class="solid-bg-2"></a></li>
+										<li><a href="#" class="solid-bg-3"></a></li>
+										<li><a href="#" class="solid-bg-4"></a></li>
+										<li><a href="#" class="solid-bg-6"></a></li>
+									</ul>
+								<li class="divider"></li>
+								<li id="logOut"><a href="login.html"><i
+										class="fa fa-power-off"></i> 退出</a></li>
+							</ul>
+						</li>
+
+						<li><a href="javascript:void(0)" style="cursor: default;"><i
+								class="fa fa-user"></i></a></li>
+					</ul>
+					<!-- /Quick Actions -->
+					<!-- Sidebar -->
+					<ul class="nav navbar-nav side-nav" id="sidebar">
+
+						<li class="collapsed-content">
+							<ul>
+								<li class="search">
+									<!-- Collapsed search pasting here at 768px -->
+								</li>
+							</ul>
+						</li>
+
+						<li class="navigation" id="navigation"><a href="#"
+							class="sidebar-toggle underline" data-toggle="#navigation">&nbsp;&nbsp;菜单列表
+								<i class="fa fa-angle-up"></i>
+						</a>
+							<ul class="menu">
+							</ul></li>
+					</ul>
+					<!-- Sidebar end -->
+				</div>
+				<!--/.nav-collapse -->
+
+			</div>
+			<!-- Fixed navbar end -->
+
+			<!-- Page content -->
+			<div id="content" class="col-md-12">
+
+				<!-- page header -->
+				<div class="pageheader">
+					<div class="breadcrumbs"></div>
+
+				</div>
+				<!-- /page header -->
+
+				<!-- content main container -->
+				<div class="main">
+
+					<!-- row -->
+					<div class="row">
+						<div class="row-md-12">
+							<!-- tile -->
+							<section class="tile transparent recent-activity">
+								<!-- tile widget -->
+								<div
+									class="tile-widget color transparent-black rounded-top-corners nopadding">
+									<!-- Nav tabs -->
+									<ul class="nav nav-tabs tabdrop">
+										<li class="active"><a class="li_users-tab"
+											href="#users-tab" data-toggle="tab" id="li_users-tab"
+											style="padding: 9px;"><i class="fa fa-home"></i> 首页</a></li>
+									</ul>
+									<!-- / Nav tabs -->
+								</div>
+								<!-- /tile widget -->
+
+								<!-- tile body -->
+								<div
+									class="tile-body tab-content nopadding rounded-bottom-corners">
+									<!-- Tab panes -->
+									<ul id="users-tab" class="tab-pane fade in active  transparent">
+
+										<div>
+											<img src="./resource/img/ppb_1.png" style="padding: 1px;"
+												width="auto" height="610" />
+										</div>
+									</ul>
+									<!-- / Tab panes -->
+								</div>
+								<!-- /tile body -->
+							</section>
+							<!-- /tile -->
+						</div>
+
+					</div>
+					<!-- /row -->
+				</div>
+				<!-- /content container -->
+			</div>
+			<!-- Page content end -->
+		</div>
+		<!-- Make page fluid-->
+
+	</div>
+
+	<div id="test1" class="center"></div>
+
+
+	<!-- Wrap all page content end -->
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+	<script src="resource/js/dtreeck.js"></script>
+	<script src="resource/js/jquery-1.11.2.js"></script>
+	<!--<script src="resource/js/jquery.js"></script>-->
+	<!-- Include all compiled plugins (below), or include individual files as needed -->
+	<script src="resource/js/jquery-ui.js"></script>
+	<script src="resource/js/bootstrap.js"></script>
+	<script src="resource/js/select2.min.js"></script>
+	<script src="resource/js/jquery.nicescroll.min.js"></script>
+	<script src="resource/js/jquery.mmenu.min.js"></script>
+
+	<script src="resource/js/ajaxfileupload.js"></script>
+
+	<script src="resource/js/chosen.jquery.min.js"></script>
+	<script src="resource/js/ajax-chosen.js"></script>
+	<script src="resource/js/bootstrap-tabdrop.js"></script>
+	<script src="resource/js/date-time/bootstrap-datepicker.min.js"></script>
+	<script src="resource/js/date-time/bootstrap-datepicker.zh-CN.min.js"></script>
+	<script src="resource/js/date-time/bootstrap-timepicker.js"></script>
+	<script
+		src="resource/js/bootstrap-datetimepicker/bootstrap-datetimepicker.js"></script>
+	<script
+		src="resource/js/bootstrap-datetimepicker/bootstrap-datetimepicker.zh-CN.js"></script>
+	<script src="resource/js/jquery.blockUI.js"></script>
+	<script src="resource/js/jquery.gritter.min.js"></script>
+	<script src="resource/js/jquery.jgrowl.js"></script>
+	<script src="resource/js/ajaxfileupload.js"></script>
+	<script src="resource/js/jqGrid/jquery.jqGrid.src.js"></script>
+	<script src="resource/js/jqGrid/i18n/grid.locale-cn.js"></script>
+	<script src="resource/js/jquery.bootstrap-duallistbox.min.js"></script>
+	<script src="resource/js/multiselect.min.js"></script>
+	<script src="resource/js/ztree/js/jquery.ztree.core-3.5.js"></script>
+	<script src="resource/js/ztree/js/jquery.ztree.excheck-3.5.js"></script>
+	<script src="resource/js/ztree/js/jquery.ztree.exedit-3.5.js"></script>
+	<script src="app/js/src/Base.js"></script>
+	<script src="app/js/src/close.tabdrop.js"></script>
+	<script src="app/js/src/ump.grid.js"></script>
+	<script src="app/js/src/stock.define.js"></script>
+	<script src="app/js/src/menu.js"></script>
+	<script src="app/js/app.js"></script>
+	<script src="app/js/index.js"></script>
+
+	<!-- Excel导入模态框（Modal）============================================start -->
+	<!--<form enctype="multipart/form-data" onsubmit="return false;">-->
+	<div class="modal fade" id="impExcel" tabindex="-1" role="dialog"
+		aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="modal-dialog" style="width: 600px">
+			<div class="modal-content">
+				<div class="modal-header">
+					<div id="myModalLabel"
+						style="font-family: Arial, sans-serif; font-size: 24px; color: #369; border-bottom: 1px solid #999">
+						<span>文件上传</span>
+						<!--                        <span> <font color="red"> -->
+						<!--                                失败的数据会以文件方式返回！</font> -->
+						<!--                        </span> -->
+					</div>
+				</div>
+				<div class="modal-body">
+					<input type="file" id="files" name="files"> <input
+						type="hidden" id="uploadUrl" name="uploadUrl"> <input
+						type="hidden" id="tmplateFlg" name="tmplateFlg"> <input
+						type="hidden" id="gridId" name="gridId">
+				</div>
+				<div class="modal-footer row" style="text-align: left">
+					<div class="col-md-6">
+						<a id="templateDownId" class="btn btn-primary"
+							onclick="getTmplate()"> 模板下载 </a>
+					</div>
+					<div class="col-md-6" style="text-align: right">
+						<button type="button" class="btn btn-primary"
+							onclick="fileUpload($('#uploadUrl').val(),$('#gridId').val())">上传</button>
+						<button type="button" class="btn btn-default" data-dismiss="modal">关闭
+						</button>
+					</div>
+				</div>
+			</div>
+			<!-- /.modal-content -->
+		</div>
+		<!-- /.modal-dialog -->
+	</div>
+	<!-- /.modal -->
+	<!-- </form> -->
+	<!-- 模态框（Modal）============================================end -->
+
+	<!-- 确认框（modeal） ==========================================start-->
+	<div id="ycf-alert" class="modal fade">
+		<div class="modal-dialog small" style="width: 400px">
+			<div class="modal-content">
+				<div class="modal-header small">
+					<div id="myModalConfirm"
+						style="font-family: Arial, sans-serif; font-size: 18px; color: #369; padding-bottom: 4px; border-bottom: 1px solid #999">
+						<span>操作提示</span>
+					</div>
+				</div>
+				<div class="modal-body small">
+					<p>[Message]</p>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-primary ok"
+						data-dismiss="modal">[BtnOk]</button>
+					<button type="button" class="btn btn-default cancel"
+						data-dismiss="modal">[BtnCancel]</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- 确认框（modeal） ==========================================end-->
+</body>
+</html>
+

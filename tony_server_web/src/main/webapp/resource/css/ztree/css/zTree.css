@@ -1,0 +1,27 @@
+div.content_wrap {
+	/* width: 600px; */
+	height: 380px;
+}
+
+div.content_wrap div.left {
+	float: left;
+	width: 250px;
+}
+
+div.content_wrap div.right {
+	float: right;
+	width: 340px;
+}
+
+div.zTreeDemoBackground {
+	height: 332px;
+	text-align: left;
+}
+
+ul.ztree {
+	border: 1px solid #c5d0dc;
+	background:#eff3f8;
+	height: 314px;
+	overflow-y: auto;
+	overflow-x: auto;
+}
