@@ -42,7 +42,7 @@ public class DbInfoController extends BaseController {
 				filter = JSON.parseObject(paramMap.get("filters"), SearchFilter.class);
 			}
 			page = assemblePageSelect(paramMap);
-			list = dbInfoServiceImpl.selectDbInfo(filter, page);
+			list = dbInfoServiceImpl.selectList(filter, page);
 		} catch (Exception e) {
 			errMsg = e.getMessage();
 			return assembleUnSelectResult(ExceptionConstants.ERROR_CODE, errMsg);

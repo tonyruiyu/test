@@ -8,6 +8,6 @@ import com.tony.pojo.SearchFilter;
 
 public interface DbInfoService {
 
-	List<DbInfo> selectDbInfo(SearchFilter filter, Page<?> page);
+	List<DbInfo> selectList(SearchFilter filter, Page<?> page);
 
 }

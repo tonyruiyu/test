@@ -18,7 +18,6 @@ import com.tony.pojo.SearchRule;
 /**
  * MyBatis查询工具类
  * 
- * @author TanYibin
  */
 public class MyBatisUtil {
 	/**

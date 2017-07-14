@@ -21,7 +21,7 @@ public class DbInfoServiceImpl implements DbInfoService {
 	DbInfoMapper dbInfoMapper;
 
 	@Override
-	public List<DbInfo> selectDbInfo(SearchFilter filter, Page<?> page) {
+	public List<DbInfo> selectList(SearchFilter filter, Page<?> page) {
 		DbInfoExample example = new DbInfoExample();
 		MyBatisUtil.setAttributes(example, filter, DbInfo.class);
 		int offsize = (page.getPageNo() - 1) * page.getPageSize();
