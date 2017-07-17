@@ -35,9 +35,6 @@ function queryLockedStockloadData() {
 		editable : true,
 		searchoptions : {
 			sopt : [ "eq" ]
-		},
-		searchrules : {
-			required : true
 		}
 	}, {
 		name : 'jdbcUrl',
@@ -49,9 +46,6 @@ function queryLockedStockloadData() {
 		},
 		searchoptions : {
 			sopt : [ "eq" ]
-		},
-		searchrules : {
-			required : true
 		}
 	}, {
 		name : 'username',
@@ -63,9 +57,6 @@ function queryLockedStockloadData() {
 		},
 		searchoptions : {
 			sopt : [ "eq" ]
-		},
-		searchrules : {
-			required : true
 		}
 	}, {
 		name : 'password',
@@ -77,9 +68,6 @@ function queryLockedStockloadData() {
 		},
 		searchoptions : {
 			sopt : [ "eq" ]
-		},
-		searchrules : {
-			required : true
 		}
 	} ];
 
@@ -87,7 +75,6 @@ function queryLockedStockloadData() {
 		url : modularPath.selectUrl,
 		datatype : "local",
 		multiselect : true,
-		//rownumbers : true,
 		colNames : colNames,
 		colModel : colModel,
 		caption : "仓库锁定库存查询"
@@ -99,7 +86,7 @@ function queryLockedStockloadData() {
 			edit : true,
 			del : true,
 			view : false,
-			refresh : false
+			refresh : true
 		},
 		editAction : editAction,
 		addAction : addAction,
@@ -114,7 +101,7 @@ function queryLockedStockloadData() {
 			delicon : 'fa-trash-o red',
 			search : true,
 			searchicon : 'fa-search orange',
-			refresh : false,
+			refresh : true,
 			refreshicon : 'fa-refresh green',
 			view : false,
 			viewicon : 'fa-search-plus grey'

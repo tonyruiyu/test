@@ -1,6 +1,3 @@
-/**
- * Created by yxt on 2015/4/29.
- */
 
 var ump = {};
 
@@ -38,7 +35,6 @@ String.prototype.format = function(args) {
         else {
             for (var i = 0; i < arguments.length; i++) {
                 if (arguments[i] != undefined) {
-                    //var reg = new RegExp("({[" + i + "]})", "g");//这个在索引大于9时会有问题，谢谢何以笙箫的指出
                     var reg= new RegExp("({)" + i + "(})", "g");
                     result = result.replace(reg, arguments[i]);
                 }
