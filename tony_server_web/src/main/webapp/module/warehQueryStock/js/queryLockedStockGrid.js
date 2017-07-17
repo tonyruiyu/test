@@ -3,12 +3,12 @@ function queryLockedStockloadData() {
 	var basePath = "/" + ump.mvcContextPath;
 	var modularPath = {
 		selectUrl : basePath + "/dbinfo/select",
-		updateUrl : basePath + "/updateChannelActivityDetail",
-		addUrl : basePath + "/addChannelActivityDetail",
-		deleteUrl : basePath + "/deleteChannelActivityDetail"
+		updateUrl : basePath + "/dbinfo/update",
+		addUrl : basePath + "/dbinfo/add",
+		deleteUrl : basePath + "/dbinfo/delete"
 	}
 	var search_selector = "#queryLockedStockSearch";
-	var grid_selector = "#queryLockedStockTable";
+	var grid_selector = "#queryLockedStockTable"; 
 	var pager_selector = "#queryLockedStockPager";
 
 	var editAction = {
@@ -29,11 +29,10 @@ function queryLockedStockloadData() {
 	var colModel = [ {
 		name : 'id',
 		index : 'id',
-		width : 50,
+		width : 0,
+		key : true,
+		hidden:true,
 		editable : true,
-		editrules : {
-			required : true
-		},
 		searchoptions : {
 			sopt : [ "eq" ]
 		},
@@ -87,8 +86,8 @@ function queryLockedStockloadData() {
 	grid(grid_selector, pager_selector, {
 		url : modularPath.selectUrl,
 		datatype : "local",
-		multiselect : false,
-		rownumbers : true,
+		multiselect : true,
+		//rownumbers : true,
 		colNames : colNames,
 		colModel : colModel,
 		caption : "仓库锁定库存查询"
@@ -98,7 +97,7 @@ function queryLockedStockloadData() {
 		navbarOptions : {
 			add : true,
 			edit : true,
-			del : false,
+			del : true,
 			view : false,
 			refresh : false
 		},
@@ -107,7 +106,7 @@ function queryLockedStockloadData() {
 		deleteAction : deleteAction,
 		selectAction : selectAction,
 		navbarOptions : {
-			edit : false,
+			edit : true,
 			editicon : 'fa-pencil blue',
 			add : true,
 			addicon : 'fa-plus-circle purple',

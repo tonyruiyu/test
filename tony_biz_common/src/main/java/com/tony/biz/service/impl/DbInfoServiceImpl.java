@@ -6,6 +6,7 @@ import javax.annotation.Resource;
 
 import org.springframework.stereotype.Service;
 
+import com.google.common.collect.Lists;
 import com.tony.MyBatisUtil;
 import com.tony.biz.service.DbInfoService;
 import com.tony.easymvc.dal.DbInfoMapper;
@@ -24,8 +25,13 @@ public class DbInfoServiceImpl implements DbInfoService {
 	public List<DbInfo> selectList(SearchFilter filter, Page<?> page) {
 		DbInfoExample example = new DbInfoExample();
 		MyBatisUtil.setAttributes(example, filter, DbInfo.class);
+		long count = dbInfoMapper.countByExample(example);
+		page.setTotalRecord((int) count);
+		if (count < 1) {
+			Lists.newArrayList();
+		}
 		int offsize = (page.getPageNo() - 1) * page.getPageSize();
-		example.limit( page.getPageSize(),offsize);
+		example.limit(page.getPageSize(), offsize);
 		return dbInfoMapper.selectByExample(example);
 	}
 

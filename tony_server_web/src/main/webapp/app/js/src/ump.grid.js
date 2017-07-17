@@ -316,7 +316,7 @@ function getAction(name, options) {
 				// var ids = options.data.id.replace(new
 				// RegExp(',',"gm"),'","');
 				// options.data = '["&' + ids + '&"]';
-				options.data = obj2JsonStr(options.data);
+				options.data = encodeURI(encodeURI(obj2JsonStr(options.data)));
 				return options;
 			},
 			serializeEditData : function(data) {

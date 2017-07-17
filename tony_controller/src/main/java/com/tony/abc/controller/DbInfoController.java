@@ -1,11 +1,14 @@
 package com.tony.abc.controller;
 
+import java.io.UnsupportedEncodingException;
+import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 import java.util.Map;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 
+import org.apache.commons.beanutils.BeanUtils;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -52,25 +55,44 @@ public class DbInfoController extends BaseController {
 
 	@ResponseBody
 	@RequestMapping("update")
-	public String update(@RequestParam("token") String token) {
-		DbInfo bean = JSON.parseObject(token, DbInfo.class);
-		int i = dbInfoMapper.updateByPrimaryKeySelective(bean);
-		return i + "";
+	public String update(HttpServletRequest request) {
+		try {
+			Map<String, String> paramMap = assembleUnSelectParam(request);
+			DbInfo bean = new DbInfo();
+			BeanUtils.populate(bean, paramMap);
+			int i = dbInfoMapper.updateByPrimaryKeySelective(bean);
+			return assembleUnSelectResult(i, null);
+		} catch (Exception e) {
+			return assembleUnSelectResult(ExceptionConstants.ERROR_CODE, e.getMessage());
+		}
 	}
 
 	@ResponseBody
 	@RequestMapping("delete")
-	public String delete(@RequestParam("token") String token) {
-		int i = dbInfoMapper.deleteByPrimaryKey(Integer.parseInt(token));
-		return i + "";
+	public String delete(HttpServletRequest request) {
+		try {
+			Map<String, String> paramMap = assembleUnSelectParam(request);
+			DbInfo bean = new DbInfo();
+			BeanUtils.populate(bean, paramMap);
+			int i = dbInfoMapper.deleteByPrimaryKey(bean.getId());
+			return assembleUnSelectResult(i, null);
+		} catch (Exception e) {
+			return assembleUnSelectResult(ExceptionConstants.ERROR_CODE, e.getMessage());
+		}
 	}
 
 	@ResponseBody
 	@RequestMapping("add")
-	public String add(@RequestParam("token") String token) {
-		DbInfo bean = JSON.parseObject(token, DbInfo.class);
-		int i = dbInfoMapper.insertSelective(bean);
-		return i + "";
+	public String add(HttpServletRequest request) {
+		try {
+			Map<String, String> paramMap = assembleUnSelectParam(request);
+			DbInfo bean = new DbInfo();
+			BeanUtils.populate(bean, paramMap);
+			int i = dbInfoMapper.insertSelective(bean);
+			return assembleUnSelectResult(i, null);
+		} catch (Exception e) {
+			return assembleUnSelectResult(ExceptionConstants.ERROR_CODE, e.getMessage());
+		}
 	}
 
 }

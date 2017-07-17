@@ -4,6 +4,7 @@ import java.io.UnsupportedEncodingException;
 import java.net.URLDecoder;
 import java.util.Collection;
 import java.util.Enumeration;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
@@ -14,6 +15,7 @@ import org.apache.commons.lang.StringUtils;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
+import com.alibaba.fastjson.JSONException;
 import com.alibaba.fastjson.JSONObject;
 import com.tony.pojo.Constants;
 import com.tony.pojo.ExceptionConstants;
@@ -142,5 +144,58 @@ public class BaseController {
 		resultObj.put("message", innerObj);
 		return resultObj.toString();
 	}
+	
+    /**
+     * TODO 组装非查询时返回结果格式
+     * 
+     * @param succCount
+     *            成功操作的数据量（大于0说明成功）
+     * @param code
+     *            返回给前台的消息CODE
+     * @return
+     */
+    protected String assembleUnSelectResult(int succCount, String code) {
+        JSONObject resultObj = new JSONObject();
+        if (succCount > 0) {
+            resultObj.put("status", "success");
+            resultObj.put(
+                    "message",
+                    code != null ? code : ExceptionConstants.SUCCESS_MESSAGE);
+        } else {
+            resultObj.put("status", "error");
+            resultObj.put(
+                    "message",
+                    code == null ? ExceptionConstants.ERROR_MESSAGE : code);
+        }
+        return resultObj.toString();
+    }
+    
+    /**
+     * TODO 组装非查询入参
+     * 
+     * @param request
+     * @return
+     * @throws UnsupportedEncodingException
+     */
+    @SuppressWarnings({ "unchecked" })
+    protected Map<String, String> assembleUnSelectParam(
+            HttpServletRequest request) throws UnsupportedEncodingException {
+        Map<String, String> paraMap = new ConcurrentHashMap<>();
+        Enumeration<String> eles = request.getParameterNames();
+        while (eles.hasMoreElements()) {
+            String key = null;
+            try {
+                key = URLDecoder.decode(eles.nextElement(), "utf-8");
+                paraMap.putAll(JSON.parseObject(key, HashMap.class));
+            } catch (UnsupportedEncodingException e) {
+                e.printStackTrace();
+            } catch (JSONException e) {
+
+            }
+        }
+        return paraMap;
+    }
+
+
 
 }
